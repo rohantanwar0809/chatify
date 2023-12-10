@@ -1,5 +1,5 @@
 {
-  "name": "chat-app",
+  "name": "chatify",
   "private": true,
   "scripts": {
     "build": "turbo build",
