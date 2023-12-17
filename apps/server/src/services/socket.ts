@@ -1,5 +1,7 @@
 import { Server } from "socket.io";
 import Redis from "ioredis";
+import prisma from "./prisma";
+import { produceMessage } from "./kafka";
 
 const redisConfig = {
   host: "redis-34241017-rohantanwar0809-8cbf.a.aivencloud.com",
@@ -47,6 +49,8 @@ class SocketService {
       if (channel !== "MESSAGES") return;
       console.log("Sub Socket Message Received", message);
       io.emit("message", JSON.parse(message));
+      produceMessage(message);
+      console.log("Message Produced To Kafka Broker");
     });
   }
 
