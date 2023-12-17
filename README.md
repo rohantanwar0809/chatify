@@ -14,6 +14,8 @@ Chatify is a simple and scalable distributed real-time chat application built wi
 - **Next.js:** Frontend framework for building a basic and responsive user interface.
 - **Redis:** In-memory data store used as a distributed database and message broker.
 - **Turbo Repo:** Monorepo management for unified codebase and shared components.
+- **Kafka:** Broker to produce & consume messages in realtime
+- **Postgres:** To dump the messages history from broker
 
 ## Project Structure
 
