@@ -7,13 +7,13 @@ import prisma from "./prisma";
  * Kafka Config
  */
 const kafka = new Kafka({
-  brokers: ["kafka-4665103-rohantanwar0809-8cbf.a.aivencloud.com:20643"],
+  brokers: [`${process.env.KAFKA_BROKER_URL}`],
   ssl: {
     ca: [fs.readFileSync(path.resolve("./ca.pem"), "utf-8")],
   },
   sasl: {
-    username: "avnadmin",
-    password: "AVNS_bRRvBCl67-fEO6CjU96",
+    username: process.env.KAFKA_USERNAME ?? "",
+    password: process.env.KAFKA_PASSWORD ?? "",
     mechanism: "plain",
   },
 });
